@@ -46,7 +46,7 @@ def read_xtmp(fname):
     return data
 
 def clean_loginlog():
-    login_clean = [('root', 's001'), ('root', 's003'), ('huawei', '121.192.191.104')]
+    login_clean = [('root', 's001'), ('root', 's003'), ('root', 'localhost'), ('huawei', '121.192.191.104')]
     def match_wtmp(x):
         for name, src in login_clean:
             if (x[4].find(name) >=0) and (x[5].find(src) >=0) :
