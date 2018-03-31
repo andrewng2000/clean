@@ -33,7 +33,7 @@ parse_arg(int argc, char *argv[], string &arg1) {
 int
 main(int argc, char *argv[]) {
     string arg1, exec_cmd;
-    string executible = "/sbin/iptables";
+    string executible = "/sbin/iptables-1.4.7 main";
     parse_arg(argc, argv, arg1);
     exec_cmd = executible + " " + arg1;
     exec("iptables-restore /etc/sysconfig/iptables");
